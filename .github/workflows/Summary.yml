@@ -6,13 +6,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  summary:
     runs-on: ubuntu-latest
 
     steps:
       - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           USERNAME: LausMirus
-          BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          THEME: github
