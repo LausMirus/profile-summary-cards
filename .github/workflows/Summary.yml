@@ -1,4 +1,4 @@
-name: Profile Summary Cards
+name: GitHub-Profile-Summary-Cards
 
 on:
   schedule:
@@ -6,12 +6,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  summary:
+  build:
     runs-on: ubuntu-latest
+    name: generate-github-profile-summary-cards
+
+    permissions:
+      contents: write
 
     steps:
+      - uses: actions/checkout@v4
+
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           USERNAME: LausMirus
+          BRANCH_NAME: main
+          UTC_OFFSET: 5.5
+          AUTO_PUSH: true
