@@ -14,5 +14,5 @@ jobs:
         with:
           USERNAME: LausMirus
           BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           THEME: github
